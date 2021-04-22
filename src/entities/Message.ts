@@ -26,7 +26,7 @@ class Message {
   user: User;
 
   @Column()
-  user_id: Date;
+  user_id: string;
 
   @CreateDateColumn()
   created_at: Date;

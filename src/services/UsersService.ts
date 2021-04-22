@@ -6,10 +6,10 @@ class UsersService {
   private usersRepository: Repository<User>;
 
   constructor() {
-    this.usersRepository = getCustomRepository(UsersRepository);
-  }
+    this.usersRepository = getCustomRepository(UsersRepository)
+}
 
-  async create(email: string) {
+  async create(email: string) {   
     //Verificar se usuario existe
     const userExists = await this.usersRepository.findOne({
       email,
@@ -28,6 +28,11 @@ class UsersService {
     await this.usersRepository.save(user);
 
     return user;
+  }
+  async findByEmail(email: string) {
+    const user = this.usersRepository.findOne({email});
+
+    return user
   }
 }
 
