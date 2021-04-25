@@ -25,7 +25,6 @@ class SettingsController {
     const settings = await settingsService.findByUsername(username);
 
     return res.json(settings);
-
   }
 
   async update(req: Request, res: Response) {
@@ -37,7 +36,6 @@ class SettingsController {
     const settings = await settingsService.update(username, chat);
 
     return res.json(settings);
-
   }
 }
 
